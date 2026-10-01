@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CA Durgotsav &amp; Navratri Samiti 2026 • Concorde Auriga</title>
-    <meta name="description" content="Official portal for CA Durgotsav & Navratri Samiti 2026 at Concorde Auriga, Medahalli. Puja Schedule, UPI QR Scan & Pay, Sponsorship Deck, and Registration Forms.">
+    <meta name="description" content="Official portal for CA Durgotsav & Navratri Samiti 2026 at Concorde Auriga, Medahalli. Puja Schedule, Detailed Timetable, UPI QR Scan & Pay, Sponsorship Deck, and Registration Forms.">
     <meta name="theme-color" content="#851326">
 
     <!-- Google Fonts -->
@@ -435,7 +435,7 @@
         }
 
         /* =========================================================
-           PUJA SCHEDULE TAB STYLES (FROM PPT PAGE 5)
+           PUJA SCHEDULE TAB STYLES
            ========================================================= */
         .schedule-card-main {
             background: rgba(255, 255, 255, 0.94);
@@ -469,6 +469,19 @@
             letter-spacing: 0.6px;
         }
 
+        .schedule-click-hint {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            background: rgba(133, 19, 38, 0.07);
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-top: 6px;
+        }
+
         .schedule-section-label {
             font-size: 11px;
             font-weight: 800;
@@ -488,11 +501,11 @@
             background: linear-gradient(90deg, rgba(201, 147, 62, 0.35), transparent);
         }
 
-        /* Key Dates Timeline Grid */
+        /* Clickable Key Dates Timeline Grid */
         .key-dates-grid {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 9px;
             margin-bottom: 16px;
         }
 
@@ -500,30 +513,47 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 11px 15px;
+            padding: 12px 16px;
             background: linear-gradient(135deg, #fffcf8 0%, #faede0 100%);
-            border: 1px solid rgba(201, 147, 62, 0.28);
-            border-radius: 12px;
-            transition: all 0.2s ease;
+            border: 1.5px solid rgba(201, 147, 62, 0.3);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+            position: relative;
         }
 
         .key-date-card:hover {
-            transform: translateX(3px);
+            transform: translateY(-2px);
             border-color: var(--gold);
-            background: #fff8ef;
+            background: #fff8ee;
+            box-shadow: 0 6px 16px rgba(201, 147, 62, 0.18);
         }
 
         .date-badge {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 13.5px;
+            gap: 10px;
+            font-size: 14px;
             font-weight: 800;
             color: var(--primary);
         }
 
         .date-icon {
-            font-size: 15px;
+            font-size: 16px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(133, 19, 38, 0.08);
+            border-radius: 8px;
+        }
+
+        .date-right-wrap {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .event-tag {
@@ -531,6 +561,24 @@
             font-weight: 700;
             color: #3b282c;
             text-align: right;
+        }
+
+        .view-timing-tag {
+            font-size: 11px;
+            font-weight: 800;
+            color: var(--gold-dark);
+            background: #fae4c3;
+            padding: 3px 8px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .key-date-card:hover .view-timing-tag {
+            background: var(--primary);
+            color: #ffffff;
         }
 
         .schedule-plus-note {
@@ -732,7 +780,7 @@
         }
 
         /* =========================================================
-           MODALS (UPI SCAN & SPONSORSHIP PRESENTATION)
+           MODALS (UPI, SPONSORSHIP & DAILY PUJA TIMINGS)
            ========================================================= */
         .modal-overlay {
             position: fixed;
@@ -805,17 +853,18 @@
 
         .modal-header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .modal-header-icon {
             width: 48px;
             height: 48px;
             border-radius: 14px;
-            margin: 0 auto 12px;
+            margin: 0 auto 10px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 22px;
         }
 
         .modal-title {
@@ -823,7 +872,7 @@
             font-size: 22px;
             font-weight: 800;
             color: var(--primary);
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             line-height: 1.25;
         }
 
@@ -1035,7 +1084,198 @@
         }
 
         /* ---------------------------------------------------------
-           SPONSORSHIP PRESENTATION MODAL (INTERACTIVE TABS)
+           3. DAILY PUJA TIMINGS MODAL STYLES
+           --------------------------------------------------------- */
+        .timing-day-tabs {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 4px;
+            background: #f5ebe0;
+            padding: 5px;
+            border-radius: 14px;
+            margin-bottom: 18px;
+        }
+
+        .timing-day-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 4px;
+            border: none;
+            background: transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.22s ease;
+            color: #6a585b;
+            text-align: center;
+        }
+
+        .timing-day-btn span {
+            font-size: 12px;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .timing-day-btn small {
+            font-size: 10px;
+            font-weight: 600;
+            opacity: 0.85;
+            margin-top: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        .timing-day-btn.active {
+            background: #ffffff;
+            color: var(--primary);
+            box-shadow: 0 3px 10px rgba(133, 19, 38, 0.12);
+        }
+
+        .timing-day-btn.active span {
+            color: var(--primary);
+        }
+
+        .timing-day-btn.active small {
+            color: var(--gold-dark);
+            font-weight: 700;
+        }
+
+        /* Daily Timing Card View */
+        .day-timing-view {
+            animation: fadeInTiming 0.25s ease;
+        }
+
+        @keyframes fadeInTiming {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .day-banner {
+            background: linear-gradient(135deg, #fdf5eb 0%, #faede0 100%);
+            border: 1px solid rgba(201, 147, 62, 0.35);
+            border-radius: 14px;
+            padding: 14px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .day-banner-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .day-banner-title {
+            font-family: 'Cinzel', serif;
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .day-banner-date {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--gold-dark);
+        }
+
+        .day-span-badge {
+            background: rgba(133, 19, 38, 0.08);
+            border: 1px solid rgba(133, 19, 38, 0.2);
+            padding: 5px 11px;
+            border-radius: 20px;
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .ritual-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .ritual-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: #fffcf8;
+            border: 1px solid rgba(201, 147, 62, 0.26);
+            border-radius: 13px;
+            transition: all 0.2s ease;
+        }
+
+        .ritual-card:hover {
+            border-color: var(--gold);
+            transform: translateX(2px);
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(201, 147, 62, 0.1);
+        }
+
+        .ritual-card.featured-ritual {
+            background: linear-gradient(135deg, #fff7ee 0%, #fdefde 100%);
+            border: 1.5px solid var(--gold);
+            box-shadow: 0 3px 10px rgba(201, 147, 62, 0.15);
+        }
+
+        .ritual-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ritual-bullet {
+            font-size: 16px;
+            color: var(--gold-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ritual-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .ritual-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-top: 1px;
+        }
+
+        .ritual-time-badge {
+            background: #faebd7;
+            color: #72460b;
+            border: 1px solid rgba(201, 147, 62, 0.35);
+            padding: 5px 11px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.2px;
+            white-space: nowrap;
+        }
+
+        .featured-ritual .ritual-time-badge {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: transparent;
+        }
+
+        /* ---------------------------------------------------------
+           SPONSORSHIP PRESENTATION MODAL
            --------------------------------------------------------- */
         .deck-badge-bar {
             display: flex;
@@ -1294,15 +1534,59 @@
             }
 
             .key-date-card {
-                padding: 10px 12px;
+                padding: 11px 12px;
             }
 
             .date-badge {
-                font-size: 12.5px;
+                font-size: 13px;
+                gap: 6px;
             }
 
             .event-tag {
                 font-size: 12px;
+            }
+
+            .view-timing-tag {
+                font-size: 10px;
+                padding: 2px 6px;
+            }
+
+            .timing-day-tabs {
+                gap: 3px;
+                padding: 4px;
+            }
+
+            .timing-day-btn {
+                padding: 6px 2px;
+            }
+
+            .timing-day-btn span {
+                font-size: 11px;
+            }
+
+            .timing-day-btn small {
+                font-size: 9px;
+            }
+
+            .day-banner {
+                padding: 12px;
+            }
+
+            .day-banner-title {
+                font-size: 15px;
+            }
+
+            .ritual-card {
+                padding: 10px 12px;
+            }
+
+            .ritual-name {
+                font-size: 13px;
+            }
+
+            .ritual-time-badge {
+                font-size: 11px;
+                padding: 4px 8px;
             }
 
             .home-tab-item {
@@ -1353,7 +1637,7 @@
                 <span>16–21 October 2026</span>
             </p>
             
-            <p class="subtitle">Official portal for Puja Schedule, Contributions, Sponsorship Deck &amp; Registration Forms</p>
+            <p class="subtitle">Official portal for Puja Schedule, Timetables, Contributions, Sponsorship Deck &amp; Forms</p>
         </header>
 
         <!-- =========================================================
@@ -1430,7 +1714,7 @@
 
 
         <!-- =========================================================
-             HOME PANE 1: PUJA & CULTURAL SCHEDULE (PPT PAGE 5 DATA)
+             HOME PANE 1: PUJA & CULTURAL SCHEDULE (CLICKABLE DATES)
              ========================================================= -->
         <section class="home-pane active" id="homeSchedulePane" role="tabpanel" aria-labelledby="homeScheduleTabBtn">
             
@@ -1439,61 +1723,90 @@
                 <div class="schedule-header-wrap">
                     <h2 class="schedule-heading">Indicative Puja &amp; Cultural Schedule</h2>
                     <div class="schedule-subheading">16–21 October 2026 &bull; Concorde Auriga</div>
+                    <div>
+                        <span class="schedule-click-hint">👆 Click any date below for detailed ritual timings</span>
+                    </div>
                 </div>
 
-                <!-- KEY DATES SECTION (FROM PPT PAGE 5) -->
+                <!-- KEY DATES SECTION (CLICKABLE FOR TIMINGS) -->
                 <div class="schedule-section-label">
-                    <span>📅 Key Dates</span>
+                    <span>📅 Key Dates &bull; Click to View Timetable</span>
                 </div>
 
                 <div class="key-dates-grid">
-                    <div class="key-date-card">
+                    
+                    <!-- 1. Maha Sasthi -->
+                    <div class="key-date-card" data-day="sasthi" role="button" tabindex="0" aria-label="View Maha Sasthi 16 Oct detailed puja timetable">
                         <div class="date-badge">
                             <span class="date-icon">🌸</span>
                             <span>16 Oct</span>
                         </div>
-                        <div class="event-tag">Maha Sasthi</div>
+                        <div class="date-right-wrap">
+                            <span class="event-tag">Maha Sasthi</span>
+                            <span class="view-timing-tag">Timings ›</span>
+                        </div>
                     </div>
 
-                    <div class="key-date-card">
+                    <!-- 2. Maha Saptami -->
+                    <div class="key-date-card" data-day="saptami" role="button" tabindex="0" aria-label="View Maha Saptami 17 Oct detailed puja timetable">
                         <div class="date-badge">
                             <span class="date-icon">🪔</span>
                             <span>17 Oct</span>
                         </div>
-                        <div class="event-tag">Maha Saptami</div>
+                        <div class="date-right-wrap">
+                            <span class="event-tag">Maha Saptami</span>
+                            <span class="view-timing-tag">Timings ›</span>
+                        </div>
                     </div>
 
-                    <div class="key-date-card">
+                    <!-- 3. Maha Ashtami -->
+                    <div class="key-date-card" data-day="ashtami" role="button" tabindex="0" aria-label="View Maha Ashtami 18 Oct detailed puja timetable">
                         <div class="date-badge">
                             <span class="date-icon">🌺</span>
                             <span>18 Oct</span>
                         </div>
-                        <div class="event-tag">Maha Ashtami</div>
+                        <div class="date-right-wrap">
+                            <span class="event-tag">Maha Ashtami</span>
+                            <span class="view-timing-tag">Timings ›</span>
+                        </div>
                     </div>
 
-                    <div class="key-date-card">
+                    <!-- 4. Maha Ashtami + Maha Navami -->
+                    <div class="key-date-card" data-day="sandhi" role="button" tabindex="0" aria-label="View Sandhi Puja & Kumari Puja 19 Oct detailed timetable">
                         <div class="date-badge">
                             <span class="date-icon">✨</span>
                             <span>19 Oct</span>
                         </div>
-                        <div class="event-tag">Maha Ashtami + Maha Navami</div>
+                        <div class="date-right-wrap">
+                            <span class="event-tag">Maha Ashtami + Maha Navami</span>
+                            <span class="view-timing-tag">Timings ›</span>
+                        </div>
                     </div>
 
-                    <div class="key-date-card">
+                    <!-- 5. Maha Navami -->
+                    <div class="key-date-card" data-day="navami" role="button" tabindex="0" aria-label="View Maha Navami 20 Oct detailed puja timetable">
                         <div class="date-badge">
                             <span class="date-icon">🔥</span>
                             <span>20 Oct</span>
                         </div>
-                        <div class="event-tag">Maha Navami</div>
+                        <div class="date-right-wrap">
+                            <span class="event-tag">Maha Navami</span>
+                            <span class="view-timing-tag">Timings ›</span>
+                        </div>
                     </div>
 
-                    <div class="key-date-card">
+                    <!-- 6. Vijaya Dashami -->
+                    <div class="key-date-card" data-day="dashami" role="button" tabindex="0" aria-label="View Vijaya Dashami 21 Oct detailed puja timetable">
                         <div class="date-badge">
                             <span class="date-icon">🎊</span>
                             <span>21 Oct</span>
                         </div>
-                        <div class="event-tag">Vijaya Dashami</div>
+                        <div class="date-right-wrap">
+                            <span class="event-tag">Vijaya Dashami</span>
+                            <span class="view-timing-tag">Timings ›</span>
+                        </div>
                     </div>
+
                 </div>
 
                 <!-- Plus Note -->
@@ -1501,7 +1814,7 @@
                     ✨ Plus cultural programmes, kids activities, flea market and Grand Dandiya Night.
                 </div>
 
-                <!-- PROGRAMME HIGHLIGHTS SECTION (FROM PPT PAGE 5) -->
+                <!-- PROGRAMME HIGHLIGHTS SECTION -->
                 <div class="schedule-section-label">
                     <span>🌟 Programme Highlights</span>
                 </div>
@@ -1841,8 +2154,12 @@
                         <span class="schedule-event">Maha Ashtami • Kumari Puja &amp; Sandhi Puja</span>
                     </div>
                     <div class="schedule-item">
-                        <span class="schedule-date">✨ 19–20 Oct</span>
-                        <span class="schedule-event">Maha Navami • Flea Market &amp; Grand Dandiya DJ Night</span>
+                        <span class="schedule-date">✨ 19 Oct</span>
+                        <span class="schedule-event">Maha Ashtami + Maha Navami • Sandhi Puja, Kumari Puja &amp; Cultural Show</span>
+                    </div>
+                    <div class="schedule-item">
+                        <span class="schedule-date">🔥 20 Oct</span>
+                        <span class="schedule-event">Maha Navami • Bhog Distribution &amp; Grand Dandiya DJ Night</span>
                     </div>
                     <div class="schedule-item">
                         <span class="schedule-date">🎊 21 Oct</span>
@@ -1920,6 +2237,443 @@
     </div>
 
 
+    <!-- =========================================================
+         3. DAILY PUJA TIMINGS & RITUALS MODAL
+         ========================================================= -->
+    <div class="modal-overlay" id="timingModal" aria-hidden="true" role="dialog" aria-labelledby="timingModalTitle">
+        <div class="modal-card modal-card-lg">
+            <button class="modal-close" id="closeTimingBtn" aria-label="Close timing modal">&times;</button>
+            
+            <div class="modal-header">
+                <div class="modal-header-icon" style="background: rgba(133, 19, 38, 0.09); border: 1px solid rgba(133, 19, 38, 0.22); color: var(--primary);">
+                    🪔
+                </div>
+                <h2 class="modal-title" id="timingModalTitle">Puja Ritual Timetable</h2>
+                <p class="modal-subtitle">Detailed day-wise timings &amp; events at Concorde Auriga Mandap</p>
+            </div>
+
+            <!-- Quick Day Switcher Tabs inside Modal -->
+            <div class="timing-day-tabs" role="tablist" aria-label="Select Festival Day">
+                <button class="timing-day-btn active" data-day="sasthi" role="tab" aria-selected="true">
+                    <span>16 Oct</span>
+                    <small>Sasthi</small>
+                </button>
+                <button class="timing-day-btn" data-day="saptami" role="tab" aria-selected="false">
+                    <span>17 Oct</span>
+                    <small>Saptami</small>
+                </button>
+                <button class="timing-day-btn" data-day="ashtami" role="tab" aria-selected="false">
+                    <span>18 Oct</span>
+                    <small>Ashtami</small>
+                </button>
+                <button class="timing-day-btn" data-day="sandhi" role="tab" aria-selected="false">
+                    <span>19 Oct</span>
+                    <small>Ash/Nav</small>
+                </button>
+                <button class="timing-day-btn" data-day="navami" role="tab" aria-selected="false">
+                    <span>20 Oct</span>
+                    <small>Navami</small>
+                </button>
+                <button class="timing-day-btn" data-day="dashami" role="tab" aria-selected="false">
+                    <span>21 Oct</span>
+                    <small>Dashami</small>
+                </button>
+            </div>
+
+            <!-- Dynamic Timetable Content Area -->
+            <div id="timingContentArea">
+                
+                <!-- 1. MAHA SASTHI (16 OCT) -->
+                <div class="day-timing-view" id="pane-sasthi">
+                    <div class="day-banner">
+                        <div class="day-banner-left">
+                            <div class="day-banner-title">1. Maha Sasthi</div>
+                            <div class="day-banner-date">📅 Friday, 16th October 2026</div>
+                        </div>
+                        <div class="day-span-badge">
+                            <span>🕣</span>
+                            <span>6:00 AM – Next Day 3:47 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="ritual-timeline">
+                        <div class="ritual-card">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔸</span>
+                                <div>
+                                    <div class="ritual-name">Sasthi Puja</div>
+                                    <div class="ritual-sub">Morning invocation &amp; rituals</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">7:00 AM</span>
+                        </div>
+
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔸</span>
+                                <div>
+                                    <div class="ritual-name">Pushpanjali</div>
+                                    <div class="ritual-sub">Community morning floral offering</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">8:30 AM</span>
+                        </div>
+
+                        <div class="ritual-card">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔸</span>
+                                <div>
+                                    <div class="ritual-name">Bodhon, Amantran &amp; Adhibas</div>
+                                    <div class="ritual-sub">Evening sacred awakening ritual &amp; Anandamela</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">6:30 PM</span>
+                        </div>
+
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🎭</span>
+                                <div>
+                                    <div class="ritual-name">Cultural Event</div>
+                                    <div class="ritual-sub">Evening dance, music &amp; community performances</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">7:00 PM Onwards</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. MAHA SAPTAMI (17 OCT) -->
+                <div class="day-timing-view" id="pane-saptami" style="display: none;">
+                    <div class="day-banner">
+                        <div class="day-banner-left">
+                            <div class="day-banner-title">2. Maha Saptami</div>
+                            <div class="day-banner-date">📅 Saturday, 17th October 2026</div>
+                        </div>
+                        <div class="day-span-badge">
+                            <span>🕢</span>
+                            <span>6:00 AM – Next Day 5:53 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="ritual-timeline">
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔸</span>
+                                <div>
+                                    <div class="ritual-name">Nabapatrika Prabesh</div>
+                                    <div class="ritual-sub">Kola Bou snan &amp; ceremonial installation</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">6:30 AM – 7:41 AM</span>
+                        </div>
+
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔸</span>
+                                <div>
+                                    <div class="ritual-name">Pushpanjali</div>
+                                    <div class="ritual-sub">Saptami Mahapushpanjali &amp; Bhog Prasad</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">10:00 AM</span>
+                        </div>
+
+                        <div class="ritual-card">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🎪</span>
+                                <div>
+                                    <div class="ritual-name">Flea Market + Mehendi</div>
+                                    <div class="ritual-sub">Festive shopping stalls, delicious treats &amp; mehendi artists</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">Day Time</span>
+                        </div>
+
+                        <div class="ritual-card">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🎨</span>
+                                <div>
+                                    <div class="ritual-name">Kids Fun Activity Competitions</div>
+                                    <div class="ritual-sub">Drawing, recitation, games &amp; fun creative contests</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">Day Time</span>
+                        </div>
+
+                        <div class="ritual-card">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔸</span>
+                                <div>
+                                    <div class="ritual-name">Sandhya Arati</div>
+                                    <div class="ritual-sub">Evening sacred dhunuchi aarti</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">7:00 PM</span>
+                        </div>
+
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🎭</span>
+                                <div>
+                                    <div class="ritual-name">Cultural Event</div>
+                                    <div class="ritual-sub">Grand evening cultural show, music &amp; drama</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">7:00 PM Onwards</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. MAHA ASHTAMI (18 OCT) -->
+                <div class="day-timing-view" id="pane-ashtami" style="display: none;">
+                    <div class="day-banner">
+                        <div class="day-banner-left">
+                            <div class="day-banner-title">3. Maha Ashtami</div>
+                            <div class="day-banner-date">📅 Sunday, 18th October 2026</div>
+                        </div>
+                        <div class="day-span-badge">
+                            <span>🕗</span>
+                            <span>6:00 AM – Next Day 7:50 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="ritual-timeline">
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔸</span>
+                                <div>
+                                    <div class="ritual-name">Pushpanjali</div>
+                                    <div class="ritual-sub">Grand Ashtami Pushpanjali batches</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">10:00 AM – 12:00 PM</span>
+                        </div>
+
+                        <div class="ritual-card">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔸</span>
+                                <div>
+                                    <div class="ritual-name">Sandhya Arati</div>
+                                    <div class="ritual-sub">Evening devotional aarti &amp; prayers</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">7:00 PM</span>
+                        </div>
+
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🎭</span>
+                                <div>
+                                    <div class="ritual-name">Cultural Event</div>
+                                    <div class="ritual-sub">Evening cultural programming, music &amp; performances</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">7:00 PM Onwards</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. MAHA ASHTAMI + MAHA NAVAMI (19 OCT) -->
+                <div class="day-timing-view" id="pane-sandhi" style="display: none;">
+                    <div class="day-banner">
+                        <div class="day-banner-left">
+                            <div class="day-banner-title">4. Maha Ashtami + Maha Navami</div>
+                            <div class="day-banner-date">📅 Monday, 19th October 2026</div>
+                        </div>
+                        <div class="day-span-badge">
+                            <span>✨</span>
+                            <span>Auspicious Sandhi Conjunction</span>
+                        </div>
+                    </div>
+
+                    <div class="ritual-timeline">
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔶</span>
+                                <div>
+                                    <div class="ritual-name">Sandhi Puja</div>
+                                    <div class="ritual-sub">Sacred 108 lotus &amp; 108 diya lighting ritual</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">7:26 AM – 8:14 AM</span>
+                        </div>
+
+                        <div class="ritual-card">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔶</span>
+                                <div>
+                                    <div class="ritual-name">Balidan</div>
+                                    <div class="ritual-sub">Symbolic vegetable/sugar-cane offering</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">7:50 AM</span>
+                        </div>
+
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔶</span>
+                                <div>
+                                    <div class="ritual-name">Pushpanjali</div>
+                                    <div class="ritual-sub">Morning floral offering for devotees</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">8:30 AM</span>
+                        </div>
+
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔸</span>
+                                <div>
+                                    <div class="ritual-name">Kumari Puja</div>
+                                    <div class="ritual-sub">Auspicious worship of young girl as Devi</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">9:30 AM</span>
+                        </div>
+
+                        <div class="ritual-card">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔸</span>
+                                <div>
+                                    <div class="ritual-name">Sandhya Arati</div>
+                                    <div class="ritual-sub">Evening devotional aarti &amp; prayers</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">7:00 PM</span>
+                        </div>
+
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🎭</span>
+                                <div>
+                                    <div class="ritual-name">Cultural Event</div>
+                                    <div class="ritual-sub">Evening cultural performances &amp; youth talents</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">7:00 PM Onwards</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. MAHA NAVAMI (20 OCT) -->
+                <div class="day-timing-view" id="pane-navami" style="display: none;">
+                    <div class="day-banner">
+                        <div class="day-banner-left">
+                            <div class="day-banner-title">5. Maha Navami</div>
+                            <div class="day-banner-date">📅 Tuesday, 20th October 2026</div>
+                        </div>
+                        <div class="day-span-badge">
+                            <span>🕗</span>
+                            <span>7:50 AM – Next Day 9:31 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="ritual-timeline">
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔸</span>
+                                <div>
+                                    <div class="ritual-name">Pushpanjali</div>
+                                    <div class="ritual-sub">Maha Navami morning floral offering</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">9:00 AM</span>
+                        </div>
+
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🍲</span>
+                                <div>
+                                    <div class="ritual-name">Bhog Distribution</div>
+                                    <div class="ritual-sub">Community Mahaprasad bhog distribution for all residents</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">12:00 PM Onwards</span>
+                        </div>
+
+                        <div class="ritual-card">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔸</span>
+                                <div>
+                                    <div class="ritual-name">Sandhya Arati</div>
+                                    <div class="ritual-sub">Evening sacred dhunuchi aarti</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">7:00 PM</span>
+                        </div>
+
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">💃</span>
+                                <div>
+                                    <div class="ritual-name">Grand Celebration DJ &amp; Dandiya Nights</div>
+                                    <div class="ritual-sub">High-energy festive Dandiya, Garba &amp; DJ celebration</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">7:30 PM Onwards</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. VIJAYA DASHAMI (21 OCT) -->
+                <div class="day-timing-view" id="pane-dashami" style="display: none;">
+                    <div class="day-banner">
+                        <div class="day-banner-left">
+                            <div class="day-banner-title">6. Vijaya Dashami</div>
+                            <div class="day-banner-date">📅 Wednesday, 21st October 2026</div>
+                        </div>
+                        <div class="day-span-badge">
+                            <span>🕣</span>
+                            <span>9:32 AM – Next Day 10:47 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="ritual-timeline">
+                        <div class="ritual-card">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔸</span>
+                                <div>
+                                    <div class="ritual-name">Aparajita Puja</div>
+                                    <div class="ritual-sub">Dashami victory puja &amp; rituals</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">8:00 AM</span>
+                        </div>
+
+                        <div class="ritual-card">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔶</span>
+                                <div>
+                                    <div class="ritual-name">Pradakshin Path</div>
+                                    <div class="ritual-sub">Circumambulation around Pratima</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">8:30 AM</span>
+                        </div>
+
+                        <div class="ritual-card featured-ritual">
+                            <div class="ritual-left">
+                                <span class="ritual-bullet">🔸</span>
+                                <div>
+                                    <div class="ritual-name">Darpan Visarjan</div>
+                                    <div class="ritual-sub">Sacred mirror immersion &amp; Sindoor Khela</div>
+                                </div>
+                            </div>
+                            <span class="ritual-time-badge">Before 9:00 AM</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-tip-box" style="margin-top: 16px;">
+                🌸 Devotees are requested to arrive 15 minutes prior to Pushpanjali &amp; Aarti. Subho Bijoya in advance!
+            </div>
+        </div>
+    </div>
+
+
     <!-- Toast Notification for Copied Details -->
     <div class="toast" id="toastMsg" role="status" aria-live="polite">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1936,10 +2690,14 @@
         document.addEventListener('DOMContentLoaded', () => {
             const upiModal = document.getElementById('upiModal');
             const sponsorModal = document.getElementById('sponsorModal');
+            const timingModal = document.getElementById('timingModal');
+
             const openUpiBtn = document.getElementById('openUpiBtn');
             const openSponsorBtn = document.getElementById('openSponsorBtn');
             const closeUpiBtn = document.getElementById('closeUpiBtn');
             const closeSponsorBtn = document.getElementById('closeSponsorBtn');
+            const closeTimingBtn = document.getElementById('closeTimingBtn');
+
             const copySamitiBtn = document.getElementById('copySamitiBtn');
             const copyBtnText = document.getElementById('copyBtnText');
             const samitiNameText = document.getElementById('samitiNameText');
@@ -1978,9 +2736,10 @@
             // Close Modal Handlers
             closeUpiBtn.addEventListener('click', () => hideModal(upiModal));
             closeSponsorBtn.addEventListener('click', () => hideModal(sponsorModal));
+            closeTimingBtn.addEventListener('click', () => hideModal(timingModal));
 
             // Overlay click dismiss
-            [upiModal, sponsorModal].forEach(modal => {
+            [upiModal, sponsorModal, timingModal].forEach(modal => {
                 modal.addEventListener('click', (e) => {
                     if (e.target === modal) {
                         hideModal(modal);
@@ -1993,7 +2752,55 @@
                 if (e.key === 'Escape') {
                     hideModal(upiModal);
                     hideModal(sponsorModal);
+                    hideModal(timingModal);
                 }
+            });
+
+            // Switch Active Day in Timing Modal
+            function switchTimingDay(dayKey) {
+                const dayButtons = document.querySelectorAll('.timing-day-btn');
+                const dayPanes = document.querySelectorAll('.day-timing-view');
+
+                dayButtons.forEach(btn => {
+                    const isActive = btn.getAttribute('data-day') === dayKey;
+                    btn.classList.toggle('active', isActive);
+                    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+
+                dayPanes.forEach(pane => {
+                    pane.style.display = (pane.id === `pane-${dayKey}`) ? 'block' : 'none';
+                });
+            }
+
+            // Bind click & keyboard on Homepage Key Date cards to open Timing Modal
+            const keyDateCards = document.querySelectorAll('.key-date-card');
+            keyDateCards.forEach(card => {
+                const openDayDetails = () => {
+                    const dayKey = card.getAttribute('data-day');
+                    if (dayKey) {
+                        switchTimingDay(dayKey);
+                    }
+                    showModal(timingModal);
+                };
+
+                card.addEventListener('click', openDayDetails);
+                card.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openDayDetails();
+                    }
+                });
+            });
+
+            // Bind Timing Modal Day Switcher buttons
+            const timingDayBtns = document.querySelectorAll('.timing-day-btn');
+            timingDayBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const dayKey = btn.getAttribute('data-day');
+                    if (dayKey) {
+                        switchTimingDay(dayKey);
+                    }
+                });
             });
 
             // Homepage Tabs (Puja Schedule vs Registration Forms)
