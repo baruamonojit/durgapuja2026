@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CA Durgotsav &amp; Navratri Samiti 2026 • Concorde Auriga</title>
-    <meta name="description" content="Official portal for CA Durgotsav & Navratri Samiti 2026 at Concorde Auriga, Medahalli. UPI QR Scan & Pay, Sponsorship Deck Presentation, and Registration Forms.">
+    <meta name="description" content="Official portal for CA Durgotsav & Navratri Samiti 2026 at Concorde Auriga, Medahalli. Puja Schedule, UPI QR Scan & Pay, Sponsorship Deck, and Registration Forms.">
     <meta name="theme-color" content="#851326">
 
     <!-- Google Fonts -->
@@ -34,7 +34,7 @@
             --gold-accent: #d8a353;
             --gold-gradient: linear-gradient(135deg, #dfa956 0%, #b8812c 100%);
             --crimson-gradient: linear-gradient(135deg, #9e1730 0%, #6e0c1e 100%);
-            --card-bg: rgba(255, 255, 255, 0.88);
+            --card-bg: rgba(255, 255, 255, 0.90);
             --card-border: rgba(201, 147, 62, 0.32);
             --text-main: #24191b;
             --text-muted: #6b5c5f;
@@ -113,7 +113,7 @@
            ========================================================= */
         .header-content {
             text-align: center;
-            margin-bottom: 28px;
+            margin-bottom: 26px;
         }
 
         .header-badge {
@@ -204,14 +204,14 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 14px;
-            margin: 26px 0 28px;
+            margin: 24px 0 26px;
         }
 
         .hero-card {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            padding: 20px 18px;
+            padding: 18px 18px;
             border-radius: var(--radius-md);
             text-decoration: none;
             cursor: pointer;
@@ -223,7 +223,6 @@
             user-select: none;
         }
 
-        /* Shimmer background animation on hover */
         .hero-card::after {
             content: '';
             position: absolute;
@@ -246,7 +245,6 @@
             transform: rotate(25deg) translateY(100%);
         }
 
-        /* UPI Card Styles */
         .hero-card-pay {
             background: linear-gradient(145deg, #ffffff 0%, #fff4ee 100%);
             border-color: rgba(201, 147, 62, 0.4);
@@ -259,7 +257,6 @@
             box-shadow: 0 12px 28px rgba(133, 19, 38, 0.16);
         }
 
-        /* Sponsorship PPT Card Styles */
         .hero-card-sponsor {
             background: linear-gradient(145deg, #fffdf8 0%, #f7ebd9 100%);
             border-color: rgba(201, 147, 62, 0.5);
@@ -280,9 +277,9 @@
         }
 
         .hero-icon-box {
-            width: 44px;
-            height: 44px;
-            border-radius: 13px;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -373,28 +370,213 @@
         }
 
         /* =========================================================
-           SECTION DIVIDER
+           HOME PAGE SECTION TABS (PUJA SCHEDULE & REGISTRATION FORMS)
            ========================================================= */
-        .section-header {
+        .home-tab-nav {
+            display: flex;
+            gap: 8px;
+            background: rgba(201, 147, 62, 0.12);
+            padding: 6px;
+            border-radius: 16px;
+            border: 1px solid rgba(201, 147, 62, 0.3);
+            margin: 6px 0 20px;
+        }
+
+        .home-tab-item {
+            flex: 1;
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin: 28px 0 16px;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border: none;
+            background: transparent;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #634d52;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
         }
 
-        .section-line {
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(201, 147, 62, 0.45), transparent);
+        .home-tab-item.active {
+            background: #ffffff;
+            color: var(--primary);
+            box-shadow: 0 4px 12px rgba(133, 19, 38, 0.1);
         }
 
-        .section-title {
-            font-size: 11.5px;
+        .home-tab-badge {
+            font-size: 10.5px;
             font-weight: 800;
-            letter-spacing: 1.1px;
+            background: rgba(201, 147, 62, 0.2);
+            color: var(--gold-dark);
+            padding: 2px 7px;
+            border-radius: 20px;
+        }
+
+        .home-tab-item.active .home-tab-badge {
+            background: rgba(133, 19, 38, 0.1);
+            color: var(--primary);
+        }
+
+        .home-pane {
+            display: none;
+            animation: fadeInPane 0.28s ease;
+        }
+
+        .home-pane.active {
+            display: block;
+        }
+
+        @keyframes fadeInPane {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =========================================================
+           PUJA SCHEDULE TAB STYLES (FROM PPT PAGE 5)
+           ========================================================= */
+        .schedule-card-main {
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 22px 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+            margin-bottom: 8px;
+        }
+
+        .schedule-header-wrap {
+            text-align: center;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 1px dashed rgba(201, 147, 62, 0.35);
+        }
+
+        .schedule-heading {
+            font-family: 'Cinzel', serif;
+            font-size: 17.5px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .schedule-subheading {
+            font-size: 12.5px;
+            color: var(--gold-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        .schedule-section-label {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
             text-transform: uppercase;
             color: var(--gold-dark);
-            white-space: nowrap;
+            margin: 14px 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .schedule-section-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(201, 147, 62, 0.35), transparent);
+        }
+
+        /* Key Dates Timeline Grid */
+        .key-dates-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .key-date-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 11px 15px;
+            background: linear-gradient(135deg, #fffcf8 0%, #faede0 100%);
+            border: 1px solid rgba(201, 147, 62, 0.28);
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .key-date-card:hover {
+            transform: translateX(3px);
+            border-color: var(--gold);
+            background: #fff8ef;
+        }
+
+        .date-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13.5px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .date-icon {
+            font-size: 15px;
+        }
+
+        .event-tag {
+            font-size: 13px;
+            font-weight: 700;
+            color: #3b282c;
+            text-align: right;
+        }
+
+        .schedule-plus-note {
+            background: #fdf5eb;
+            border: 1px solid rgba(201, 147, 62, 0.3);
+            border-radius: 10px;
+            padding: 9px 13px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            text-align: center;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        /* Programme Highlights Pills Grid */
+        .highlights-pill-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .highlight-pill-item {
+            background: #ffffff;
+            border: 1px solid rgba(201, 147, 62, 0.22);
+            border-radius: 11px;
+            padding: 9px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #402f32;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease;
+        }
+
+        .highlight-pill-item:hover {
+            border-color: var(--gold);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(201, 147, 62, 0.12);
+        }
+
+        .highlight-pill-icon {
+            font-size: 15px;
+            flex-shrink: 0;
         }
 
         /* =========================================================
@@ -667,7 +849,6 @@
             box-shadow: 0 10px 26px rgba(133, 19, 38, 0.08);
         }
 
-        /* Target Corner Brackets */
         .corner-bracket {
             position: absolute;
             width: 20px;
@@ -697,7 +878,6 @@
             object-fit: contain;
         }
 
-        /* Animated Scanner Line */
         .scan-laser-line {
             position: absolute;
             left: 0;
@@ -717,7 +897,6 @@
             100% { top: 96%; opacity: 0; }
         }
 
-        /* Verified Beneficiary Box */
         .verified-beneficiary-card {
             background: #fdf7ee;
             border: 1.5px solid rgba(201, 147, 62, 0.38);
@@ -751,7 +930,6 @@
             word-break: break-word;
         }
 
-        /* Supported UPI Apps Row */
         .upi-apps-row {
             display: flex;
             align-items: center;
@@ -771,7 +949,6 @@
             border: 1px solid rgba(201, 147, 62, 0.2);
         }
 
-        /* Action Buttons */
         .modal-action-stack {
             display: flex;
             flex-direction: column;
@@ -889,7 +1066,6 @@
             border-radius: 6px;
         }
 
-        /* Tabs Header */
         .modal-tabs {
             display: flex;
             gap: 6px;
@@ -933,7 +1109,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 4-Stat Metric Box */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -963,7 +1138,6 @@
             margin-top: 2px;
         }
 
-        /* Deliverable Grid */
         .benefit-cards-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -994,7 +1168,6 @@
             line-height: 1.35;
         }
 
-        /* Schedule Timeline */
         .schedule-list {
             display: flex;
             flex-direction: column;
@@ -1026,7 +1199,6 @@
             color: #3b2c2e;
         }
 
-        /* Budget Highlights Table */
         .budget-table {
             width: 100%;
             border-collapse: collapse;
@@ -1059,7 +1231,6 @@
             background: #fdf4e9;
         }
 
-        /* Toast Feedback */
         .toast {
             position: fixed;
             bottom: 26px;
@@ -1087,7 +1258,7 @@
         }
 
         /* =========================================================
-           RESPONSIVE DESIGN (MOBILE FIRST POLISH)
+           RESPONSIVE DESIGN
            ========================================================= */
         @media (max-width: 540px) {
             body {
@@ -1102,7 +1273,7 @@
             .featured-grid {
                 grid-template-columns: 1fr;
                 gap: 12px;
-                margin: 22px 0 24px;
+                margin: 20px 0 22px;
             }
 
             .hero-card {
@@ -1116,6 +1287,27 @@
 
             .benefit-cards-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .highlights-pill-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .key-date-card {
+                padding: 10px 12px;
+            }
+
+            .date-badge {
+                font-size: 12.5px;
+            }
+
+            .event-tag {
+                font-size: 12px;
+            }
+
+            .home-tab-item {
+                font-size: 12.5px;
+                padding: 9px 10px;
             }
 
             .form-button {
@@ -1161,7 +1353,7 @@
                 <span>16–21 October 2026</span>
             </p>
             
-            <p class="subtitle">Official portal for Puja Contributions, Sponsorship Proposal Presentation &amp; Registration Forms</p>
+            <p class="subtitle">Official portal for Puja Schedule, Contributions, Sponsorship Deck &amp; Registration Forms</p>
         </header>
 
         <!-- =========================================================
@@ -1220,87 +1412,222 @@
 
         </section>
 
-        <!-- Divider -->
-        <div class="section-header">
-            <div class="section-line"></div>
-            <span class="section-title">Registration &amp; Participation Forms</span>
-            <div class="section-line"></div>
+        <!-- =========================================================
+             HOME PAGE SECTION TABS (SCHEDULE & FORMS)
+             ========================================================= -->
+        <div class="home-tab-nav" role="tablist" aria-label="Home Sections">
+            <button class="home-tab-item active" id="homeScheduleTabBtn" data-target="homeSchedulePane" role="tab" aria-selected="true">
+                <span>🪔</span>
+                <span>Puja Schedule</span>
+                <span class="home-tab-badge">16–21 Oct</span>
+            </button>
+            <button class="home-tab-item" id="homeFormsTabBtn" data-target="homeFormsPane" role="tab" aria-selected="false">
+                <span>📝</span>
+                <span>Registration Forms</span>
+                <span class="home-tab-badge">5 Forms</span>
+            </button>
         </div>
 
-        <!-- Google Form Links -->
-        <div class="button-group">
+
+        <!-- =========================================================
+             HOME PANE 1: PUJA & CULTURAL SCHEDULE (PPT PAGE 5 DATA)
+             ========================================================= -->
+        <section class="home-pane active" id="homeSchedulePane" role="tabpanel" aria-labelledby="homeScheduleTabBtn">
             
-            <!-- Form 1: Bhog Donation -->
-            <a class="form-button"
-               href="https://docs.google.com/forms/d/e/1FAIpQLScPIu9oQOYFEPHkfBCX8wP75ZsvXr1uHJm8drWxHS5rbRIEAg/viewform?usp=sharing&ouid=117584684039394560148"
-               target="_blank" rel="noopener noreferrer">
-                <span class="btn-left">
-                    <span class="btn-icon">🪔</span>
-                    <span class="btn-text-wrap">
-                        <span class="btn-title">Bhog Donation Form</span>
-                        <span class="btn-subtext">Offer Mahaprasad bhog during the 6-day puja</span>
-                    </span>
-                </span>
-                <span class="chevron">&#8250;</span>
-            </a>
+            <div class="schedule-card-main">
+                
+                <div class="schedule-header-wrap">
+                    <h2 class="schedule-heading">Indicative Puja &amp; Cultural Schedule</h2>
+                    <div class="schedule-subheading">16–21 October 2026 &bull; Concorde Auriga</div>
+                </div>
 
-            <!-- Form 2: Puja Volunteer -->
-            <a class="form-button"
-               href="https://docs.google.com/forms/d/e/1FAIpQLSfROJ8xa_1BlMO5Z0ljpQw8q8L3saTOvO7NKe5AugddZwj07w/viewform?usp=sharing&ouid=117584684039394560148"
-               target="_blank" rel="noopener noreferrer">
-                <span class="btn-left">
-                    <span class="btn-icon">🤝</span>
-                    <span class="btn-text-wrap">
-                        <span class="btn-title">Puja &amp; Navratri Volunteer Form</span>
-                        <span class="btn-subtext">Join committees, pandal management &amp; seva</span>
-                    </span>
-                </span>
-                <span class="chevron">&#8250;</span>
-            </a>
+                <!-- KEY DATES SECTION (FROM PPT PAGE 5) -->
+                <div class="schedule-section-label">
+                    <span>📅 Key Dates</span>
+                </div>
 
-            <!-- Form 3: Kanya Puja Volunteer -->
-            <a class="form-button"
-               href="https://docs.google.com/forms/d/e/1FAIpQLSfxdYOmLwhF7EVL50fFmxjLslcMISLXF8h81VAmFe_l-HqVjw/viewform?usp=sharing&ouid=117584684039394560148"
-               target="_blank" rel="noopener noreferrer">
-                <span class="btn-left">
-                    <span class="btn-icon">🌸</span>
-                    <span class="btn-text-wrap">
-                        <span class="btn-title">Kanya Puja Volunteer Form</span>
-                        <span class="btn-subtext">Support auspicious Kumari &amp; Kanya Puja seva</span>
-                    </span>
-                </span>
-                <span class="chevron">&#8250;</span>
-            </a>
+                <div class="key-dates-grid">
+                    <div class="key-date-card">
+                        <div class="date-badge">
+                            <span class="date-icon">🌸</span>
+                            <span>16 Oct</span>
+                        </div>
+                        <div class="event-tag">Maha Sasthi</div>
+                    </div>
 
-            <!-- Form 4: Anandamela -->
-            <a class="form-button"
-               href="https://docs.google.com/forms/d/e/1FAIpQLSctho2x4hAh2O6KJMozFkvsiqH0m9CAd0dU_3ihM5jEWVFq_A/viewform?usp=sharing&ouid=117584684039394560148"
-               target="_blank" rel="noopener noreferrer">
-                <span class="btn-left">
-                    <span class="btn-icon">🍲</span>
-                    <span class="btn-text-wrap">
-                        <span class="btn-title">Nomination For Anandamela</span>
-                        <span class="btn-subtext">Culinary food stalls &amp; homemade delicacies</span>
-                    </span>
-                </span>
-                <span class="chevron">&#8250;</span>
-            </a>
+                    <div class="key-date-card">
+                        <div class="date-badge">
+                            <span class="date-icon">🪔</span>
+                            <span>17 Oct</span>
+                        </div>
+                        <div class="event-tag">Maha Saptami</div>
+                    </div>
 
-            <!-- Form 5: Cultural Program -->
-            <a class="form-button"
-               href="https://docs.google.com/forms/d/e/1FAIpQLSedRPJ9BJpHDz1w5L7Hp03sCrTnkkuf_01O3iRl1-sw5o1UGA/viewform?usp=sharing&ouid=117584684039394560148"
-               target="_blank" rel="noopener noreferrer">
-                <span class="btn-left">
-                    <span class="btn-icon">🎭</span>
-                    <span class="btn-text-wrap">
-                        <span class="btn-title">Nomination For Cultural Program</span>
-                        <span class="btn-subtext">Dance, music, drama, Dandiya &amp; kid performances</span>
-                    </span>
-                </span>
-                <span class="chevron">&#8250;</span>
-            </a>
+                    <div class="key-date-card">
+                        <div class="date-badge">
+                            <span class="date-icon">🌺</span>
+                            <span>18 Oct</span>
+                        </div>
+                        <div class="event-tag">Maha Ashtami</div>
+                    </div>
 
-        </div>
+                    <div class="key-date-card">
+                        <div class="date-badge">
+                            <span class="date-icon">✨</span>
+                            <span>19 Oct</span>
+                        </div>
+                        <div class="event-tag">Maha Ashtami + Maha Navami</div>
+                    </div>
+
+                    <div class="key-date-card">
+                        <div class="date-badge">
+                            <span class="date-icon">🔥</span>
+                            <span>20 Oct</span>
+                        </div>
+                        <div class="event-tag">Maha Navami</div>
+                    </div>
+
+                    <div class="key-date-card">
+                        <div class="date-badge">
+                            <span class="date-icon">🎊</span>
+                            <span>21 Oct</span>
+                        </div>
+                        <div class="event-tag">Vijaya Dashami</div>
+                    </div>
+                </div>
+
+                <!-- Plus Note -->
+                <div class="schedule-plus-note">
+                    ✨ Plus cultural programmes, kids activities, flea market and Grand Dandiya Night.
+                </div>
+
+                <!-- PROGRAMME HIGHLIGHTS SECTION (FROM PPT PAGE 5) -->
+                <div class="schedule-section-label">
+                    <span>🌟 Programme Highlights</span>
+                </div>
+
+                <div class="highlights-pill-grid">
+                    <div class="highlight-pill-item">
+                        <span class="highlight-pill-icon">🎨</span>
+                        <span>Kids activity competitions</span>
+                    </div>
+
+                    <div class="highlight-pill-item">
+                        <span class="highlight-pill-icon">🎭</span>
+                        <span>Evening cultural programmes</span>
+                    </div>
+
+                    <div class="highlight-pill-item">
+                        <span class="highlight-pill-icon">🎪</span>
+                        <span>Flea market + Mehendi</span>
+                    </div>
+
+                    <div class="highlight-pill-item">
+                        <span class="highlight-pill-icon">🌸</span>
+                        <span>Kanya Puja</span>
+                    </div>
+
+                    <div class="highlight-pill-item">
+                        <span class="highlight-pill-icon">💃</span>
+                        <span>Grand Dandiya Night</span>
+                    </div>
+
+                    <div class="highlight-pill-item">
+                        <span class="highlight-pill-icon">🪔</span>
+                        <span>Traditional rituals &amp; aarti</span>
+                    </div>
+
+                    <div class="highlight-pill-item" style="grid-column: 1 / -1;">
+                        <span class="highlight-pill-icon">🌺</span>
+                        <span>Visarjan procession</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             HOME PANE 2: REGISTRATION & VOLUNTEER FORMS
+             ========================================================= -->
+        <section class="home-pane" id="homeFormsPane" role="tabpanel" aria-labelledby="homeFormsTabBtn">
+            
+            <div class="button-group">
+                
+                <!-- Form 1: Bhog Donation -->
+                <a class="form-button"
+                   href="https://docs.google.com/forms/d/e/1FAIpQLScPIu9oQOYFEPHkfBCX8wP75ZsvXr1uHJm8drWxHS5rbRIEAg/viewform?usp=sharing&ouid=117584684039394560148"
+                   target="_blank" rel="noopener noreferrer">
+                    <span class="btn-left">
+                        <span class="btn-icon">🪔</span>
+                        <span class="btn-text-wrap">
+                            <span class="btn-title">Bhog Donation Form</span>
+                            <span class="btn-subtext">Offer Mahaprasad bhog during the 6-day puja</span>
+                        </span>
+                    </span>
+                    <span class="chevron">&#8250;</span>
+                </a>
+
+                <!-- Form 2: Puja Volunteer -->
+                <a class="form-button"
+                   href="https://docs.google.com/forms/d/e/1FAIpQLSfROJ8xa_1BlMO5Z0ljpQw8q8L3saTOvO7NKe5AugddZwj07w/viewform?usp=sharing&ouid=117584684039394560148"
+                   target="_blank" rel="noopener noreferrer">
+                    <span class="btn-left">
+                        <span class="btn-icon">🤝</span>
+                        <span class="btn-text-wrap">
+                            <span class="btn-title">Puja &amp; Navratri Volunteer Form</span>
+                            <span class="btn-subtext">Join committees, pandal management &amp; seva</span>
+                        </span>
+                    </span>
+                    <span class="chevron">&#8250;</span>
+                </a>
+
+                <!-- Form 3: Kanya Puja Volunteer -->
+                <a class="form-button"
+                   href="https://docs.google.com/forms/d/e/1FAIpQLSfxdYOmLwhF7EVL50fFmxjLslcMISLXF8h81VAmFe_l-HqVjw/viewform?usp=sharing&ouid=117584684039394560148"
+                   target="_blank" rel="noopener noreferrer">
+                    <span class="btn-left">
+                        <span class="btn-icon">🌸</span>
+                        <span class="btn-text-wrap">
+                            <span class="btn-title">Kanya Puja Volunteer Form</span>
+                            <span class="btn-subtext">Support auspicious Kumari &amp; Kanya Puja seva</span>
+                        </span>
+                    </span>
+                    <span class="chevron">&#8250;</span>
+                </a>
+
+                <!-- Form 4: Anandamela -->
+                <a class="form-button"
+                   href="https://docs.google.com/forms/d/e/1FAIpQLSctho2x4hAh2O6KJMozFkvsiqH0m9CAd0dU_3ihM5jEWVFq_A/viewform?usp=sharing&ouid=117584684039394560148"
+                   target="_blank" rel="noopener noreferrer">
+                    <span class="btn-left">
+                        <span class="btn-icon">🍲</span>
+                        <span class="btn-text-wrap">
+                            <span class="btn-title">Nomination For Anandamela</span>
+                            <span class="btn-subtext">Culinary food stalls &amp; homemade delicacies</span>
+                        </span>
+                    </span>
+                    <span class="chevron">&#8250;</span>
+                </a>
+
+                <!-- Form 5: Cultural Program -->
+                <a class="form-button"
+                   href="https://docs.google.com/forms/d/e/1FAIpQLSedRPJ9BJpHDz1w5L7Hp03sCrTnkkuf_01O3iRl1-sw5o1UGA/viewform?usp=sharing&ouid=117584684039394560148"
+                   target="_blank" rel="noopener noreferrer">
+                    <span class="btn-left">
+                        <span class="btn-icon">🎭</span>
+                        <span class="btn-text-wrap">
+                            <span class="btn-title">Nomination For Cultural Program</span>
+                            <span class="btn-subtext">Dance, music, drama, Dandiya &amp; kid performances</span>
+                        </span>
+                    </span>
+                    <span class="chevron">&#8250;</span>
+                </a>
+
+            </div>
+
+        </section>
 
         <!-- Instagram Community Link -->
         <div class="social-section">
@@ -1667,6 +1994,28 @@
                     hideModal(upiModal);
                     hideModal(sponsorModal);
                 }
+            });
+
+            // Homepage Tabs (Puja Schedule vs Registration Forms)
+            const homeTabButtons = document.querySelectorAll('.home-tab-item');
+            const homePanes = document.querySelectorAll('.home-pane');
+
+            homeTabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    homeTabButtons.forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-selected', 'false');
+                    });
+                    homePanes.forEach(pane => pane.classList.remove('active'));
+
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-selected', 'true');
+                    const targetId = btn.getAttribute('data-target');
+                    const targetPane = document.getElementById(targetId);
+                    if (targetPane) {
+                        targetPane.classList.add('active');
+                    }
+                });
             });
 
             // Interactive Tab Switcher for Sponsorship Modal
