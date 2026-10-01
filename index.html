@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Mobile responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CA Durgutsav & Navratri Samiti</title>
+
+    <style>
+
+        /* =========================
+           BASIC RESET
+           ========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+
+            background: #f7f4ef;
+
+            position: relative;
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           BACKGROUND LOGO
+           ========================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            background-image: url("logo.png");
+
+            background-repeat: no-repeat;
+
+            background-position: center;
+
+            background-size: 650px auto;
+
+            /* Change this value if required */
+            opacity: 0.15;
+
+            /*
+             * Keep the logo behind everything
+             */
+            z-index: -1;
+
+            pointer-events: none;
+        }
+
+
+        /* =========================
+           MAIN CONTAINER
+           ========================= */
+
+        .container {
+
+            width: 90%;
+
+            max-width: 700px;
+
+            margin: 50px auto;
+
+            padding: 35px 30px;
+
+            /*
+             * Slightly transparent white
+             * so the logo can subtly show
+             * around/behind the content.
+             */
+            background: rgba(255, 255, 255, 0.92);
+
+            border-radius: 16px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        h1 {
+
+            text-align: center;
+
+            margin: 0 0 10px 0;
+
+            font-size: 32px;
+
+            color: #7b1e2b;
+        }
+
+
+        .subtitle {
+
+            text-align: center;
+
+            color: #666;
+
+            font-size: 16px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           FORM BUTTONS
+           ========================= */
+
+        .form-button {
+
+            display: block;
+
+            width: 100%;
+
+            padding: 17px 20px;
+
+            margin: 16px 0;
+
+            text-decoration: none;
+
+            text-align: center;
+
+            /*
+             * Button background
+             */
+            background: rgba(255, 255, 255, 0.96);
+
+            color: #5f1824;
+
+            border: 1px solid #d8c8c0;
+
+            border-radius: 10px;
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            /*
+             * Small shadow
+             */
+            box-shadow:
+                0 2px 6px rgba(0, 0, 0, 0.06);
+
+            /*
+             * Smooth hover effect
+             */
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        /* =========================
+           BUTTON HOVER
+           ========================= */
+
+        .form-button:hover {
+
+            background: #fff;
+
+            border-color: #a56a72;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 5px 12px rgba(0, 0, 0, 0.10);
+        }
+
+
+        /* =========================
+           BUTTON CLICK
+           ========================= */
+
+        .form-button:active {
+
+            transform: translateY(0);
+
+            box-shadow:
+                0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        .footer {
+
+            text-align: center;
+
+            margin-top: 30px;
+
+            font-size: 13px;
+
+            color: #888;
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                width: 94%;
+
+                margin: 25px auto;
+
+                padding: 25px 18px;
+            }
+
+
+            h1 {
+
+                font-size: 25px;
+            }
+
+
+            .subtitle {
+
+                font-size: 14px;
+
+                margin-bottom: 25px;
+            }
+
+
+            .form-button {
+
+                font-size: 15px;
+
+                padding: 15px 12px;
+            }
+
+
+            body::before {
+
+                background-size: 430px auto;
+
+                opacity: 0.13;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+
+    <div class="container">
+
+
+        <!-- Heading -->
+
+        <h1>
+            Durga Puja &amp; Navratri
+        </h1>
+
+
+        <div class="subtitle">
+            Please select the appropriate form below
+        </div>
+
+
+
+        <!-- =========================
+             FORM 1
+             ========================= -->
+
+        <a
+            class="form-button"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScPIu9oQOYFEPHkfBCX8wP75ZsvXr1uHJm8drWxHS5rbRIEAg/viewform?usp=sharing&ouid=117584684039394560148"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Bhog Donation Form
+        </a>
+
+
+
+        <!-- =========================
+             FORM 2
+             ========================= -->
+
+        <a
+            class="form-button"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfROJ8xa_1BlMO5Z0ljpQw8q8L3saTOvO7NKe5AugddZwj07w/viewform?usp=sharing&ouid=117584684039394560148"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Durga Puja &amp; Navratri Volunteer Form
+        </a>
+
+
+
+        <!-- =========================
+             FORM 3
+             ========================= -->
+
+        <a
+            class="form-button"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfxdYOmLwhF7EVL50fFmxjLslcMISLXF8h81VAmFe_l-HqVjw/viewform?usp=sharing&ouid=117584684039394560148"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Kanya Puja Volunteer Form
+        </a>
+
+
+
+        <!-- =========================
+             FORM 4
+             ========================= -->
+
+        <a
+            class="form-button"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSctho2x4hAh2O6KJMozFkvsiqH0m9CAd0dU_3ihM5jEWVFq_A/viewform?usp=sharing&ouid=117584684039394560148"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Nomination For Anandamela
+        </a>
+
+
+
+        <!-- =========================
+             FORM 5
+             ========================= -->
+
+        <a
+            class="form-button"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSedRPJ9BJpHDz1w5L7Hp03sCrTnkkuf_01O3iRl1-sw5o1UGA/viewform?usp=sharing&ouid=117584684039394560148"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Nomination For Cultural Program
+        </a>
+
+
+
+        <!-- =========================
+             FOOTER
+             ========================= -->
+
+        <div class="footer">
+            Thank you for your participation
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
