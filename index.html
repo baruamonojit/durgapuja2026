@@ -723,6 +723,117 @@
         }
 
         /* =========================================================
+           PUJA FINANCE & ACCOUNTS PANEL
+           ========================================================= */
+        .finance-panel {
+            background: linear-gradient(135deg, #fffcf8 0%, #fdf5ea 100%);
+            border: 1.5px solid rgba(201, 147, 62, 0.4);
+            border-radius: 20px;
+            padding: 18px 20px;
+            margin-top: 24px;
+            box-shadow: 0 4px 16px rgba(133, 19, 38, 0.05);
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .finance-panel:hover {
+            border-color: var(--gold);
+            box-shadow: 0 8px 24px rgba(201, 147, 62, 0.16);
+            transform: translateY(-2px);
+        }
+
+        .finance-panel-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .finance-panel-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .finance-icon-box {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(133, 19, 38, 0.1) 0%, rgba(201, 147, 62, 0.22) 100%);
+            border: 1px solid rgba(201, 147, 62, 0.35);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .finance-title-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .finance-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--primary-dark);
+            line-height: 1.25;
+        }
+
+        .finance-auth-pill {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 20px;
+            background: #fde8eb;
+            color: var(--primary);
+            border: 1px solid rgba(133, 19, 38, 0.2);
+        }
+
+        .finance-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 3px;
+            line-height: 1.35;
+            font-weight: 500;
+        }
+
+        .finance-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--crimson-gradient);
+            color: #ffffff;
+            padding: 11px 18px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(133, 19, 38, 0.22);
+            transition: all 0.2s ease;
+        }
+
+        .finance-btn:hover {
+            background: linear-gradient(135deg, #a91d37 0%, #7d0e22 100%);
+            box-shadow: 0 6px 18px rgba(133, 19, 38, 0.3);
+            filter: brightness(1.05);
+        }
+
+        .finance-note {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 9px;
+            font-weight: 500;
+        }
+
+        /* =========================================================
            SOCIAL & FOOTER
            ========================================================= */
         .social-section {
@@ -1941,6 +2052,48 @@
             </div>
 
         </section>
+
+        <!-- =========================================================
+             PUJA FINANCE & ACCOUNTS PORTAL (AUTHORIZED USERS)
+             ========================================================= -->
+        <div class="finance-panel">
+            <div class="finance-panel-top">
+                <div class="finance-panel-left">
+                    <div class="finance-icon-box">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                            <path d="M7 10h2l2-3 2 6 2-3h2"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="finance-title-row">
+                            <h3 class="finance-title">Puja Finance &amp; Accounts Portal</h3>
+                            <span class="finance-auth-pill">🔒 Auth Only</span>
+                        </div>
+                        <p class="finance-desc">Live financial ledger &amp; expense tracking web app for authorized users</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a class="finance-btn"
+               href="https://script.google.com/macros/s/AKfycbxgRxm7dHPzzG3yjLwzH-Wm1MaZfFIQNcRHyTlx4gxUmsPrtCNZln3ur9QzCGesZsJA5Q/exec"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open Puja Finance Portal Web App (Authorized Access Only)">
+                <span>Open Finance Dashboard</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+            </a>
+            
+            <div class="finance-note">
+                ✨ Secure Google Sheets web app &bull; Accessible to authorized Google accounts only
+            </div>
+        </div>
 
         <!-- Instagram Community Link -->
         <div class="social-section">
